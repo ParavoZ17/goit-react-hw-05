@@ -2,7 +2,7 @@ import axios from "axios";
 
 axios.defaults.baseURL = "https://api.themoviedb.org/3/trending/movie/day?language=en-US";
 
-export default async function fetchFotos  (){
+export default async function fetchMovies  (){
     const response = await axios.get("",
         {
             headers: {
