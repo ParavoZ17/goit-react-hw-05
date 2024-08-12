@@ -1,0 +1,13 @@
+.navi{
+    display: flex;
+    gap:10px;
+
+}
+.link{
+text-decoration: none;
+color: black;
+}
+
+.isActive{
+    color:blueviolet;
+}
