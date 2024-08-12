@@ -18,7 +18,7 @@ export default function Navigation() {
         to="/movies"
         className={makeLinkClass}
       >
-        New Page
+        Search Movies
       </NavLink>
     </nav>
   );

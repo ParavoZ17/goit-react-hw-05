@@ -14,21 +14,39 @@ async function fetchMovies() {
   return response.data.results;
 }
 
-async function getMovieById  (moviesId) {
+async function getMovieById(moviesId) {
   const responce = await axios.get(`movie/${moviesId}`, {
     headers: {
       Authorization: `Bearer ${key}`,
     },
   });
   return responce.data;
-};
- async function getFilerMovies (query) {
+}
+async function getFilerMovies(query) {
   const response = await axios.get(`search/movie?query=${query}`, {
     headers: {
       Authorization: `Bearer ${key}`,
     },
   });
   return response.data.results;
-};
+}
 
-export { fetchMovies, getMovieById, getFilerMovies };
+async function getMovieCast(id) {
+  const response = await axios.get(`/movie/${id}/credits`, {
+    headers: {
+      Authorization: `Bearer ${key}`,
+    },
+  });
+  return response.data.cast;
+}
+
+async function getMovieReview(id) {
+  const response = await axios.get(`/movie/${id}/reviews`, {
+    headers: {
+      Authorization: `Bearer ${key}`,
+    },
+  });
+  return response.data.results;
+}
+
+export { fetchMovies, getMovieById, getFilerMovies, getMovieReview, getMovieCast };
