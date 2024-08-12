@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { NavLink, Outlet, useLocation, useParams, Link } from "react-router-dom";
 import { getMovieById } from "../../movie";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
@@ -64,7 +64,9 @@ const MovieDetailsPage = () => {
                 <NavLink to="reviews">Reviews</NavLink>
               </li>
             </ul>
+            <Suspense fallback={<div>Loading</div>}>
             <Outlet/>
+            </Suspense>
           </div>
         ))}
     </div>
